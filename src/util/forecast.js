@@ -10,7 +10,7 @@ function forecast(longitude, latitude, callback) {
         } else if (body.message) {
             callback('Unable to find location, try another search.', undefined);
         } else {
-            callback( undefined, body.weather[0].description + '.' + ' It is currently ' + body.main.temp + ' degrees out. There is a ' + body.main.feels_like + '% chances of rain.');
+            callback( undefined, body.weather[0].description + '.' + ' It is currently ' + body.main.temp + ' degrees out. There is a ' + body.main.feels_like + '% chances of rain.' + ' Minimum Temperature ' + body.main.temp_min + ' degrees and Maximum Temperature ' + body.main.temp_max + ' degrees with ' + body.main.humidity + '% of humidity.');
         }
     })
 }
