@@ -8,7 +8,7 @@ function geocode(address, callback) {
     request( {url, json: true}, (error, {body} = {}) => {
         if (error) {
             callback('Unable to connect to location service!', undefined);
-        } else if (body.features.length === 0) {
+        } else if (body.message || body.features.length === 0) {
             callback('No result found, try another search.', undefined);
         } else {
             callback(undefined, {
